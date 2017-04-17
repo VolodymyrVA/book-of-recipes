@@ -1,0 +1,45 @@
+.header-content {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.user-status,
+.home-status {
+  padding-top: 1.7%;
+}
+.header-content a {
+  color: #c5c5c5;
+}
+
+.log-in {
+  margin: 0px 0 10px 34%;
+}
+
+.home {
+  margin-left: 47%;
+}
+
+.header-content .navbar-brand {
+  font-size: 3rem;
+  color: orange;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  padding: 0;
+}
+
+.header-content  .navbar-brand:hover {
+  color: orange;
+}
+
+.separated {
+  height: 0.05rem;
+  background: #c5c5c5;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
+.vertical-separated {
+  width: 1px;
+  height: 30%;
+  background: #c5c5c5;
+  display: inline-block;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3 wrapper-login">
+      <form class="form-login" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
+        <h4>Welcome back.</h4>
+        <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseoverLogin)">Required</em>
+        <input type="text" (ngModel)="userName" name="userName" id="userName" class="form-control input-sm chat-input" placeholder="username" required />
+        <br>
+        <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseoverLogin)">Required</em>
+        <input type="password" (ngModel)="password" name="password" id="userPassword" class="form-control input-sm chat-input inp-pass" placeholder="password" required />
+        <br>
+        <div class="wrapper">
+            <span class="group-btn" (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-md button-login">login</button>
+            </span>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

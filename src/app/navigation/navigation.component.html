@@ -1,0 +1,7 @@
+<div class="search">
+  <form class="form-search" (ngSubmit)="onSubmit()" #todoForm="ngForm">
+    <input class="" type="text" placeholder="Search" [(ngModel)]="newRecipe" name="newRecipe" (keyup)="onSelect(newRecipe)">
+    <!--<button type="submit" [disabled]="todoForm.form.invalid">Search</button>-->
+  </form>
+</div>
+

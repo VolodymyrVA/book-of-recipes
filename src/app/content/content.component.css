@@ -1,0 +1,29 @@
+.wrapper-content {
+  display: flex;
+  width: 1300px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  color: gray;
+}
+
+.food{
+  width: 18rem;
+  margin-left: 2%;
+}
+
+.wrapper-img {
+  min-width: 18rem;
+  min-height: 15rem;
+}
+
+.food-img-top {
+  min-height: 15rem;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.food-title {
+  text-align: center;
+}
+

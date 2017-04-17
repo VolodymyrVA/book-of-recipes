@@ -1,0 +1,16 @@
+<app-navigation (select)="selectRecipe($event)"></app-navigation>
+
+<div class="wrapper-content" *ngIf="resipesData.length">
+
+  <div class="food" *ngFor="let resipes of resipesData;let i = index;">
+    <div class="wrapper-img">
+      <img [routerLink]="['/getrecipes-page', i]" class="food-img-top" src="{{resipes.imageUrl}}">
+    </div>
+
+    <div class="food-block">
+      <h4 class="food-title">{{resipes.title}}</h4>
+      <p class="food-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+
+  </div>
+</div>
