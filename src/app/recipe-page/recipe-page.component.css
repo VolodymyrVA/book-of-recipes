@@ -1,0 +1,54 @@
+.wrapper-content {
+  display: flex;
+  width: 1300px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0 auto;
+  color: gray;
+}
+
+/*==================header=================*/
+
+.header {
+  margin: 0 auto;
+  margin-bottom: 10%;
+  overflow: hidden;
+  max-width: 50rem;
+}
+
+.header-img-top {
+  min-height: 30rem;
+  min-width: 50rem;
+  border-radius: 5px;
+}
+
+.header-block {
+  margin-top: 5%;
+}
+
+.header-title {
+  text-align: center;
+  color: orange;
+  font-size: 3rem;
+  margin: 2% 0;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-description,
+.header-recipe {
+  text-align: center;
+  color: orange;
+}
+
+.header-produts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+

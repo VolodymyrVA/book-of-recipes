@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3 wrapper-login">
+      <form class="form-login" [formGroup]="loginifo" autocomplete="off" novalidate>
+
+
+        <input type="text"
+               class="form-control input-sm chat-input"
+               formControlName="username"
+               placeholder="username"/>
+
+
+        <input type="password"
+               class="form-control input-sm chat-input inp-pass"
+               formControlName="password"
+               placeholder="password"/>
+
+
+        <div class="wrapper">
+            <span class="group-btn" >
+                <button type="submit" class="btn btn-primary btn-md button-login">login</button>
+            </span>
+        </div>
+
+
+        <p> Form: {{loginifo.value | json}}</p>
+        <p> Form: status {{loginifo.status}}</p>
+        <p> Password: status {{ loginifo.get('password').errors | json }}</p>
+      </form>
+
+    </div>
+  </div>
+</div>

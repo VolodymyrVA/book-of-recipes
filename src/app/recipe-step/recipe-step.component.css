@@ -1,0 +1,24 @@
+.recipse{
+  margin: 0 auto;
+  margin-bottom: 2%;
+  overflow: hidden;
+  max-width: 50rem;
+}
+
+.recipse-img-top {
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.recipse-block {
+  margin-top: 5%;
+}
+
+.recipse-title {
+  font-size: 2rem;
+}
+
+.recipse-text {
+  text-align: center;
+}

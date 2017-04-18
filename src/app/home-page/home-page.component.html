@@ -1,0 +1,16 @@
+<app-search (select)="selectRecipe($event)"></app-search>
+
+<div class="wrapper-content" *ngIf="tempRecipeData.length">
+
+  <div class="food" *ngFor="let recipes of tempRecipeData;let i = index;">
+    <div class="wrapper-img">
+      <img [routerLink]="['/recipe-page', i]" class="food-img-top" src="{{recipes.imageUrl}}">
+    </div>
+
+    <div class="food-block">
+      <h4 class="food-title">{{recipes.title}}</h4>
+      <p class="food-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>username
+    </div>
+
+  </div>
+</div>

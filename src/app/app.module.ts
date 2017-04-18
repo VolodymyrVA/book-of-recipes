@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,31 +12,26 @@ import {routes} from "./app.router";
 
 import {AuthModule} from "./auth/auth.module";
 
-import {HeaderComponent} from "./header/header.component";
-
-import {LoginModule} from "./login/login.module";
-import {SingupModule} from "./singup/singup.module";
-import {GetrecipesModule} from "./getrecipes/getrecipse.module";
-import {ContentModule} from './content/content.module';
-
+import {HomeModule} from "./home-page/home-page.module";
+import {TopNavigationModule} from "./top-navigation/top-navigation.module";
+import {RecipeModule} from "./recipe-page/recipe-page.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
 
     AuthModule,
-    LoginModule,
-    ContentModule,
-    SingupModule,
-    GetrecipesModule
+    HomeModule,
+    RecipeModule,
+    TopNavigationModule
   ],
   providers: [
     Service
