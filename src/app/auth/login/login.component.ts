@@ -1,11 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {FormControl, FormGroup, ControlContainer, FormBuilder, Validators, AbstractControl} from '@angular/forms';
-
-
-function passwordMatcher(c: AbstractControl) {
-
-}
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +8,33 @@ function passwordMatcher(c: AbstractControl) {
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginifo: FormGroup;
+  logininfo: FormGroup;
 
-  constructor(private router: Router, public  fb: FormBuilder) {
-
-    this.loginifo = this.fb.group({
-      username: ['username', Validators.required],
-      password: ['12345678', Validators.required]
-    }, {validator: passwordMatcher});
-
+  constructor(private router: Router, private fb: FormBuilder) {
   }
 
   ngOnInit() {
+    this.logininfo = this.fb.group({
+
+      username: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(20),
+        Validators.pattern('^[a-zA-Z0-9_.-]*$')
+      ])],
+
+      password: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(20),
+        Validators.pattern('^.*(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$')
+      ])]
+
+    });
+  }
+
+  onSubmit(loginValue) {
+    console.log(loginValue)
   }
 
 }

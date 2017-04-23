@@ -1,31 +1,85 @@
 <div class="container">
   <div class="row">
     <div class="col-md-offset-5 col-md-3 wrapper-login">
-      <form class="form-login" [formGroup]="loginifo" autocomplete="off" novalidate>
+      <form class="form-login"
+            [formGroup]="logininfo"
+            autocomplete="off"
+            (ngSubmit)="onSubmit(logininfo.value)"
+            novalidate>
 
+        <h4>Welcome back.</h4>
 
         <input type="text"
                class="form-control input-sm chat-input"
                formControlName="username"
-               placeholder="username"/>
+               placeholder="username"
+        />
+
+        <!--Errors massage username-->
+
+        <div *ngIf="logininfo.controls.username?.invalid && (logininfo.controls.username.dirty || logininfo.controls.username.touched)"
+             class="alert alert-danger">
+
+          <div [hidden]="!logininfo.controls.username.errors.required">
+            Name is required.
+          </div>
+
+          <div [hidden]="!logininfo.controls.username.errors.minlength">
+            Name must be at least 5 characters long.
+          </div>
+
+          <div [hidden]="!logininfo.controls.username.errors.maxlength">
+            Name cannot be more than 20 characters long.
+          </div>
+
+          <div [hidden]="!logininfo.controls.username.errors.pattern">
+            Name must be at letters and numbers
+          </div>
+
+        </div>
+
+
 
 
         <input type="password"
                class="form-control input-sm chat-input inp-pass"
                formControlName="password"
-               placeholder="password"/>
+               placeholder="password"
+        />
 
+        <!--Errors massage password -->
+
+        <div *ngIf="logininfo.controls.password?.invalid && (logininfo.controls.password.dirty || logininfo.controls.password.touched)"
+             class="alert alert-danger">
+
+          <div [hidden]="!logininfo.controls.password.errors.required">
+            Password is required.
+          </div>
+
+          <div [hidden]="!logininfo.controls.password.errors.minlength">
+            Password must be at least 5 characters long .
+          </div>
+
+          <div [hidden]="!logininfo.controls.password.errors.maxlength">
+            Password cannot be more than 20 characters long.
+          </div>
+
+          <div [hidden]="!logininfo.controls.password.errors.pattern">
+            Password at least one Capital letter/at least one Number/ one special symbol (!/$/#/% ...).
+
+          </div>
+
+        </div>
 
         <div class="wrapper">
             <span class="group-btn" >
-                <button type="submit" class="btn btn-primary btn-md button-login">login</button>
+                <button type="submit" class="btn btn-primary btn-md button-login"
+                        [disabled]="!logininfo.valid"
+                        [ngClass]="{invalid: logininfo.invalid}">
+                  login
+                </button>
             </span>
         </div>
-
-
-        <p> Form: {{loginifo.value | json}}</p>
-        <p> Form: status {{loginifo.status}}</p>
-        <p> Password: status {{ loginifo.get('password').errors | json }}</p>
       </form>
 
     </div>

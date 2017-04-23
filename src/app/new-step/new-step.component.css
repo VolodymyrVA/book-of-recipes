@@ -1,0 +1,50 @@
+h2 {
+  text-align: center;
+  margin:0 auto;
+  margin-bottom: 5%;
+}
+
+label {
+  width: 15%;
+}
+
+.wrapper-input {
+  width: 30%;
+  display: inline-block;
+}
+
+span {
+  font-size: 2rem;
+  color: #d2691e;
+  font-weight: 900;
+  width: 30%;
+}
+
+input {
+  color: #d2691e;
+}
+
+.separate {
+  width: 100%;
+  height: 1px;
+  background: #c5c5c5;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  margin-left: -4px;
+}
+
+textarea {
+  display: inline-block;
+  color: #d2691e;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.discription-step label {
+  width: 45%;
+}

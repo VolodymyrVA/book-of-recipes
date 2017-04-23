@@ -54,15 +54,21 @@ h4 {
 
 .form-control {
   border-radius: 10px;
+  margin-top: 10%;
 }
 
 .wrapper {
   text-align: center;
+  margin-top: 10%;
 }
 
 .button-login {
   background: orange;
   border: 1px solid white;
+}
+
+.invalid {
+  background: gray;
 }
 
 

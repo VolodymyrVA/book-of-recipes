@@ -1,0 +1,57 @@
+<form action="" [formGroup]="ingredients">
+  <div class="ingredients item">
+    <label>
+      <h3>Ingredients</h3>
+    </label>
+    <div class="wrapper-input">
+      <input
+        type="text"
+        formControlName="ingredients"
+        placeholder="ingredients"
+        (change)="getIngredients(ingredients.value.ingredients)"/>
+    </div>
+    <span>{{ingredients.value.ingredients}}/></span>
+  </div>
+
+  <div class="separate"></div>
+
+  <div class="quantity item">
+    <label>
+      <h3>Ingredients</h3>
+    </label>
+    <div class="wrapper-input">
+      <input
+        type="text"
+        formControlName="quantity"
+        placeholder="quantity"
+        (change)="getQuantity(ingredients.value.quantity)"/>
+    </div>
+    <span>{{ingredients.value.quantity}}/></span>
+  </div>
+
+  <div class="separate"></div>
+
+  <div class="units item">
+    <label>
+      <h3>Ingredients</h3>
+    </label>
+    <div class="wrapper-input">
+      <select
+        type="text"
+        formControlName="units"
+        placeholder="units"
+        (change)="getUnits(ingredients.value.units)">
+
+        <option value="gr">gr</option>
+        <option value="spoons">spoons</option>
+        <option value="ml">ml</option>
+        <option value="liter">liter</option>
+
+      </select>
+
+    </div>
+  </div>
+
+  <div class="separate"></div>
+
+</form>

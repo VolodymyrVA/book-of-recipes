@@ -1,18 +1,127 @@
 <div class="container">
   <div class="row">
     <div class="col-md-offset-5 col-md-3 wrapper-login">
-      <form class="form-login">
+      <form class="form-login"
+            [formGroup]="registration"
+            autocomplete="off"
+            (ngSubmit)="onSubmit(registration.value)"
+            novalidate>
+
         <h4>Registration</h4>
 
-        <input type="text" id="email" class="form-control input-sm chat-input" placeholder="e-mail" />
-        <br>
-        <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-        <br>
-        <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-        <br>
+        <input type="text"
+               formControlName="email"
+               class="form-control input-sm chat-input"
+               placeholder="e-mail"/>
+
+        <!--Errors massage email-->
+
+        <div
+          *ngIf="registration.controls.email?.invalid && (registration.controls.email.dirty || registration.controls.email.touched)"
+          class="alert alert-danger">
+
+          <div [hidden]="!registration.controls.email.errors.required">
+            e-mail is required.
+          </div>
+
+          <div [hidden]="!registration.controls.email.errors.pattern">
+            e-mail invalid
+          </div>
+
+        </div>
+
+
+        <input type="text"
+               formControlName="username"
+               class="form-control input-sm chat-input"
+               placeholder="username"/>
+
+        <!--Errors massage username-->
+
+        <div
+          *ngIf="registration.controls.username?.invalid && (registration.controls.username.dirty || registration.controls.username.touched)"
+          class="alert alert-danger">
+
+          <div [hidden]="!registration.controls.username.errors.required">
+            Name is required.
+          </div>
+
+          <div [hidden]="!registration.controls.username.errors.minlength">
+            Name must be at least 5 characters long.
+          </div>
+
+          <div [hidden]="!registration.controls.username.errors.maxlength">
+            Name cannot be more than 20 characters long.
+          </div>
+
+          <div [hidden]="!registration.controls.username.errors.pattern">
+            Name must be at letters and numbers
+          </div>
+
+        </div>
+
+
+        <div formGroupName="passwordConfirm">
+
+          <input type="text"
+                 formControlName="password"
+                 class="form-control input-sm chat-input"
+                 placeholder="password"/>
+
+
+          <!--Errors massage password -->
+
+          <div
+            *ngIf="registration.controls.passwordConfirm.controls.password?.invalid && (registration.controls.passwordConfirm.controls.password.dirty || registration.controls.passwordConfirm.controls.password.touched)"
+            class="alert alert-danger">
+
+            <div [hidden]="!registration.controls.passwordConfirm.controls.password.errors.required">
+              Password is required.
+            </div>
+
+            <div [hidden]="!registration.controls.passwordConfirm.controls.password.errors.minlength">
+              Password must be at least 5 characters long .
+            </div>
+
+            <div [hidden]="!registration.controls.passwordConfirm.controls.password.errors.maxlength">
+              Password cannot be more than 20 characters long.
+            </div>
+
+            <div [hidden]="!registration.controls.passwordConfirm.controls.password.errors.pattern">
+              Password at least one Capital letter/at least one Number/ one special symbol (!/$/#/% ...).
+
+            </div>
+
+          </div>
+
+
+          <input type="text"
+                 formControlName="confirm"
+                 class="form-control input-sm chat-input"
+                 placeholder="confirm password"/>
+
+          <!--Errors massage confirm -->
+
+          <div
+            *ngIf="registration.controls.passwordConfirm.controls.confirm?.invalid && (registration.controls.passwordConfirm.controls.confirm.dirty || registration.controls.passwordConfirm.controls.confirm.touched)"
+            class="alert alert-danger">
+
+            <div [hidden]="!registration.controls.passwordConfirm.controls.confirm.errors.required">
+              Confirm is required.
+            </div>
+
+          </div>
+
+
+        </div>
+
         <div class="wrapper">
             <span class="group-btn">
-                <a href="#" class="btn btn-primary btn-md button-login">Sing Up<i class="fa fa-sign-in"></i></a>
+                <button type="submit" class="btn btn-primary btn-md button-login"
+                        [disabled]="!registration.valid"
+                        [ngClass]="{invalid: registration.invalid}">
+                  Sing Up
+                </button>
             </span>
         </div>
       </form>

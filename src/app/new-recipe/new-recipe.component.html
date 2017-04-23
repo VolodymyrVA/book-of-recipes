@@ -1,0 +1,98 @@
+<div class="container">
+  <form class="form-add-page" autocomplete="off" [formGroup]="newPage" novalidate>
+
+    <h2>Short Description</h2>
+
+    <div class="title item">
+      <label>
+        <h3>Recipe title</h3>
+      </label>
+      <div class="wrapper-input">
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="title name"/>
+      </div>
+      <span> <em>{{newPage.value.title}}</em></span>
+    </div>
+
+    <div class="separate"></div>
+
+    <div class="imageUrl item">
+      <label>
+        <h3>Recipe image</h3>
+      </label>
+      <div class="wrapper-input">
+        <input
+          type="text"
+          formControlName="imageUrl"
+          placeholder="add img Url"/>
+      </div>
+      <span> <img src="{{newPage.value.imageUrl}}"/></span>
+    </div>
+
+    <div class="separate"></div>
+
+    <div class="discription-recipe item">
+      <label>
+        <h3>Recipe description</h3>
+      </label>
+      <div class="wrapper-input">
+        <textarea
+          formControlName="discriptionRecipeTitle"
+          rows="4"
+          cols="50"
+          >
+        </textarea >
+      </div>
+    </div>
+
+    <div class="separate"></div>
+
+    <h2>Full Description</h2>
+
+    <div class="discription-recipe item">
+      <label>
+        <h3>Description of preparation</h3>
+      </label>
+      <div class="wrapper-input">
+        <textarea
+          formControlName="description"
+          rows="4"
+          cols="50"
+        >
+        </textarea >
+      </div>
+    </div>
+
+    <div class="separate"></div>
+
+    <div class="time item">
+      <label>
+        <h3>Cooking time in minutes</h3>
+      </label>
+      <div class="wrapper-input">
+        <input
+          type="text"
+          formControlName="time"
+          placeholder="title name"/>
+      </div>
+      <span> <em>{{newPage.value.time}}</em></span>
+    </div>
+
+    <div class="separate"></div>
+
+    <app-new-ingredients></app-new-ingredients>
+
+    <div class="separate"></div>
+
+    <h2>Step Description</h2>
+
+      <app-new-step (urlStep)="getUrlStep($event)" (discriptionStep)="getDescriptionStep($event)" ></app-new-step>
+
+    <div class="separate"></div>
+
+    <button type="submit" [disabled]="!newPage.valid">add</button>
+
+  </form>
+</div>

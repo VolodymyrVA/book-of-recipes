@@ -1,0 +1,32 @@
+<form action="" [formGroup]="step">
+  <div class="stepUrl item">
+    <label>
+      <h3>Url step</h3>
+    </label>
+    <div class="wrapper-input">
+      <input
+        type="text"
+        formControlName="urlStep"
+        placeholder="add img Url"
+        (change)="getUrl(step.value.urlStep)"/>
+    </div>
+    <span> <img src="{{step.value.urlStep}}"/></span>
+  </div>
+
+  <div class="separate"></div>
+
+  <div class="discription-step item">
+    <label>
+      <h3>Step description</h3>
+    </label>
+    <div class="wrapper-input">
+        <textarea
+          formControlName="descriptionStep"
+          (change)="getDescription(step.value.descriptionStep)"
+          rows="4"
+          cols="50"
+        >
+        </textarea >
+    </div>
+  </div>
+</form>

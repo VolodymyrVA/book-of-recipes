@@ -3,6 +3,7 @@ export interface IRecipes {
 
   title: string;
   imageUrl: string;
+  discriptionRecipeTitle: string;
 
 
   author: string;

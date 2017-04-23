@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {Service} from '../../shared/data-service/service';
-
+import {NetworkService} from '../../shared/network/network-service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,17 +10,29 @@ import {Service} from '../../shared/data-service/service';
 export class HomeComponent implements OnInit {
   recipesData: any[];
   tempRecipeData: any [];
-  constructor(private service: Service) {
-    this.recipesData = [];
-  }
 
+  constructor(private networkService: NetworkService) {
+    this.recipesData = [];
+    this.tempRecipeData = [];
+  }
 
   ngOnInit() {
-    this.recipesData = this.service.getDish();
-    this.selectRecipe();
+    this.networkService
+      .getShort()
+      .map((data) => {
+        let result = [];
+        for (let key in data) {
+          result.push(Object.assign({key: key}, data[key]))
+        }
+        return result;
+      })
+      .subscribe(recipesData => {
+        this.recipesData = recipesData;
+        this.selectRecipe();
+      });
   }
 
-  selectRecipe(search?:string) {
+  selectRecipe(search?: string) {
     let searchRecipe = new RegExp((search || '').toLowerCase());
 
     this.tempRecipeData = this.recipesData.filter((rec) => {

@@ -7,6 +7,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Azu',
     imageUrl: 'src/pictures/food/0.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -72,6 +73,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Entrecote, steak',
     imageUrl: 'src/pictures/food/1.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -137,6 +139,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Balyk',
     imageUrl: 'src/pictures/food/2.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -202,6 +205,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Round fried meat pie',
     imageUrl: 'src/pictures/food/3.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -267,6 +271,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Beef Stroganoff',
     imageUrl: 'src/pictures/food/4.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -332,6 +337,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Big Mac',
     imageUrl: 'src/pictures/food/5.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -397,6 +403,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Round rissoles, meatballs',
     imageUrl: 'src/pictures/food/6.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,
@@ -462,6 +469,7 @@ export const recipesData: IRecipes[] = [
 
     title: 'Pancake, flapjack',
     imageUrl: 'src/pictures/food/7.jpg',
+    discriptionRecipeTitle: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 
     author: 'Some Author',
     timeForCoock: 30,

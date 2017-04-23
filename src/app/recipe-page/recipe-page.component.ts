@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Service } from '../../shared/data-service/service'
-import { IRecipes } from '../../shared/interface/IRecipes'
+import { NetworkService } from '../../shared/network/network-service'
 
 
 @Component({
@@ -12,21 +12,18 @@ import { IRecipes } from '../../shared/interface/IRecipes'
 export class RecipeComponent implements OnInit {
   recipe;
 
-  constructor(private activateRouter: ActivatedRoute,private service: Service) {
+  constructor(private activateRouter: ActivatedRoute,private service: Service, private networkService : NetworkService) {
     this.activateRouter.params
       .subscribe((data: any) => {
-        this.loadRecipe(+data.id)
+        this.networkService.getRecipesFull(data.id)
+          .subscribe((recipe) => {
+            this.recipe = recipe
+          })
       })
   }
 
   ngOnInit() {
 
-  }
-
-  loadRecipe(id: number): void{
-    if(typeof id === 'number'){
-      this.recipe = this.service.getRecipe(id);
-    }
   }
 
 }

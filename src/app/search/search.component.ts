@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
 
   onSelect(newRecipe) {
     this.select.emit(newRecipe);
-    console.log(newRecipe);
   }
 
 }
